@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz [AV]</title>
+</head>
+
+<body>
+    <h1>Get a FizzBuzz Result!</h1>
+    <form onsubmit="return false">
+        <label>Type a number:</label>
+        <input id="name" type="text" value="0">
+        <button id="tombol_form">Click here!</button>
+    </form>
+    <h3 id="container"></h3>
+</body>
+
+<script>
+    document.getElementById("tombol_form").
+        addEventListener("click", fizzbuzz);
+
+    function fizzbuzz() {
+
+        var n = document.getElementById("name").value;
+        var hasil = document.getElementById("container");
+
+        for (let i = 1; i <= 100; i++) {
+            if (n == 0) {
+                hasil.innerHTML = "invalid input";
+                hasil.style.color = "red";
+            } else if (n % 3 === 0 && n % 5 === 0) {
+                hasil.innerHTML = "FizzBuzz!";
+            } else if (n % 3 === 0) {
+                hasil.innerHTML = "Fizz!";
+            } else if (n % 5 === 0) {
+                hasil.innerHTML = "Buzz!";
+            } else {
+                hasil.innerHTML = n;
+            }
+        }
+    }
+</script>
+
+</html>
