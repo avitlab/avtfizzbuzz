@@ -27,17 +27,24 @@
         var hasil = document.getElementById("container");
 
         for (let i = 1; i <= 100; i++) {
-            if (n == 0) {
+            if (n == "") {
+                hasil.innerHTML = "number must be filled out";
+                hasil.style.color = "red";
+            } else if (n == 0) {
                 hasil.innerHTML = "invalid input";
                 hasil.style.color = "red";
             } else if (n % 3 === 0 && n % 5 === 0) {
                 hasil.innerHTML = "FizzBuzz!";
+                hasil.style.color = "black";
             } else if (n % 3 === 0) {
                 hasil.innerHTML = "Fizz!";
+                hasil.style.color = "black";
             } else if (n % 5 === 0) {
                 hasil.innerHTML = "Buzz!";
+                hasil.style.color = "black";
             } else {
                 hasil.innerHTML = n;
+                hasil.style.color = "black";
             }
         }
     }
